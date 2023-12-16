@@ -9,29 +9,25 @@
 int main(void)
 {
 	int n, m;
-	int x, y;
 
-	for (n = 48; n < 58; n++)
+	for (n = 0; n < 100; n++)
 	{
-		for (m = 48; m < 58; m++)
+		for (m = 0; m < 100; m++)
 		{
-			for (x = n; x < 58; x++)
+			if (n < m)
 			{
-				for (y = m + 1; y < 58; y++)
+				putchar((n / 10) + 48);
+				putchar((n % 10) + 48);
+				putchar(' ');
+				putchar((m / 10) + 48);
+				putchar((m % 10) + 48);
+				if (n != 98 || m != 99)
 				{
-					putchar(n);
-					putchar(m);
+					putchar(',');
 					putchar(' ');
-					putchar(x);
-					putchar(y);
-
-					if (n != 57 || m != 56 || x != 57 || y != 57)
-					{
-						putchar(44);
-						putchar(' ');
-					}
 				}
 			}
+
 		}
 	}
 	putchar('\n');
