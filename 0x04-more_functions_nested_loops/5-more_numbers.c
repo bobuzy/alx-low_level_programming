@@ -16,18 +16,9 @@ void more_numbers(void)
 		{
 			if (m > 9)
 			{
-				int o, p;
-
-				o = m / 10;
-				p = m % 10;
-
-				_putchar(o + '0');
-				_putchar(p + '0');
+				_putchar((m / 10) + '0');
 			}
-			else
-			{
-				_putchar(m + '0');
-			}
+			_putchar((m % 10) + '0');
 		}
 		_putchar('\n');
 	}
