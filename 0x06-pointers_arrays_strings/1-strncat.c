@@ -5,13 +5,13 @@
  * @dest: The destination string
  * @src: The source string
  * @n: The most number of bytes to use from src
- * 
+ *
  * Return: This returns the resulting string dest
  */
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int ;
+	int i;
 	int j;
 
 	i = 0;
