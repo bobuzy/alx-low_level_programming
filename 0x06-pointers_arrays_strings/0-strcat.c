@@ -10,23 +10,28 @@
 
 char *_strcat(char *dest, char *src)
 {
-	int n;
-	int m;
+	int n = 0;
+	int i;
 
-	n = 0;
+	/*
+	 * Count the length of the destination string to determine starting
+	 * point for appending
+	 */
 	while (dest[n] != '\0')
 	{
 		n++;
 	}
 
-	m = 0;
-	while (src[m] != '\0')
+	/* Append the source string to the destination string */
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		dest[n] = src[m];
-		n++;
-		m++;
+		dest[n] = src[i];
+		n++; /* Increase n at every loop */
 	}
 
+	/* Add the null character tot the end of the destiantion string */
 	dest[n] = '\0';
+
+	/* Return the string */
 	return (dest);
 }
