@@ -2,7 +2,8 @@
 #include "main.h"
 
 /**
- * print_diagsums - Print the sum of two diagonals of a square matrix of integers
+ * print_diagsums - Print the sum of two diagonals of
+ * a square matrix of integers
  * @a: Pointer to 2D array
  * @size: input
  *
