@@ -9,20 +9,41 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	for (; *haystack != '\0'; haystack++)
+	int i;
+
+	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		char *n = haystack;
+		/*Point to current position in haystack*/
+		char *n = &haystack[i];
+
+		/*Point to the beginning of needle*/
 		char *m = needle;
 
+		/**
+		 * Once *n = *m start comparing them and move to the next
+		 * character till you get to the end of needle (*m = '\0')
+		 */
 		while (*n == *m && *m != '\0')
 		{
-			n++;
-			m++;
+			n++; /*Move to the next character in haystack*/
+			m++; /*Move to the next character in needle*/
 		}
 
-		if (*m == '\0')
-			return (haystack);
-	}
+		/**
+		 * If along the line, they don't match, the for loop will restart
+		 * until all the characters in haystack has been exceeded
+		 */
 
+		/**
+		 * If they match (*m = '\0'), after needle has been exceeded, return
+		 * the current position haystack (the position where *n == *m)
+		 */
+
+		if (*m == '\0')
+		{
+			return (&haystack[i]);
+		}
+	}
+	/* Else return NULL */
 	return (0);
 }
