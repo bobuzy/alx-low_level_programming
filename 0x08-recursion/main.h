@@ -8,7 +8,7 @@ int _strlen_recursion(char *s);
 int factorial(int n);
 int _pow_recursion(int x, int y);
 int _sqrt_recursion(int n);
-int square_root_recursion(int n, int randomNumber);
+int square_root(int x, int y);
 int is_prime_number(int n);
 int checkPrime(int n, int randomNumber);
 int is_palindrome(char *s);
