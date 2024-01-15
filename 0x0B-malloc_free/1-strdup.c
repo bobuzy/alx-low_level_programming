@@ -9,7 +9,7 @@
 
 char *_strdup(char *str)
 {
-	unsigned int n, i = 0;
+	unsigned int n, i = 1;
 	char *ptr;
 
 	if (str == NULL)
@@ -33,6 +33,8 @@ char *_strdup(char *str)
 	{
 		ptr[n] = str[n];
 	}
+	
+	ptr[i] = '\0';
 
 	return (ptr);
 }
