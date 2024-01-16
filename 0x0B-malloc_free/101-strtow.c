@@ -68,4 +68,4 @@ char **strtow(char *str)
 	words = count_words(str);
 	if (words == 0)
 		return (NULL);
-
+}
