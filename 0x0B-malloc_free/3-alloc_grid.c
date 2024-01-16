@@ -18,10 +18,7 @@ int **alloc_grid(int width, int height)
 		return (NULL);
 	}
 
-	/* Allocate memories to store int pointers for each row */
-	/* This would create a pointer to a pointer */
 	ptr = (int **)malloc(height * sizeof(int *));
-
 	if (ptr == NULL)
 	{
 		free(ptr);
@@ -30,14 +27,12 @@ int **alloc_grid(int width, int height)
 
 	for (i = 0; i < height; i++)
 	{
-		/* Allocate a block of int memory to each row*/
 		ptr[i] = malloc(width * sizeof(int));
 
 		if (ptr[i] == NULL)
 		{
 			for (j = i; j >= 0; j--)
 			{
-				/* Free already craeated memories */
 				free(ptr[j]);
 			}
 			free(ptr);
