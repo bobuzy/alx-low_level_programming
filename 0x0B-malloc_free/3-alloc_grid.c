@@ -33,7 +33,7 @@ int **alloc_grid(int width, int height)
 			for (j = 0; j < i; j++)
 			{
 				/* Free already craeated memories */
-				free(ptr[j]);
+				free (ptr[j]);
 			}
 			return (NULL);
 		}
@@ -50,4 +50,5 @@ int **alloc_grid(int width, int height)
 	}
 
 	return (ptr);
+	free (ptr);
 }
