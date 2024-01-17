@@ -70,14 +70,15 @@ char *convert_short(char *src)
 		{
 			length++;
 
-			if (src[i - 1] == ' ' && length > 1)
+			if (src[i - 1] == ' ' || src[i + 1] == '\0')
 			{
 				length++;
 			}
 		}
 	}
-
 	ptr = malloc((sizeof(char) * length) + 1);
+	if (ptr == NULL)
+		return (NULL);
 	for (i = 0; src[i] != '\0'; i++)
 	{
 		if (src[i] != ' ')
@@ -85,17 +86,10 @@ char *convert_short(char *src)
 			ptr[index] = src[i];
 			index++;
 
-			if (src[i + 1] == ' ')
+			if (src[i + 1] == ' ' || src [1 + i] == '\0')
 			{
-				for (j = i + 1; src[j] != '\0'; j++)
-				{
-					if (src[j] != ' ')
-					{
-						ptr[index] = ' ';
-						index++;
-						break;
-					}
-				}
+				ptr[index] = ' ';
+				index++;
 			}
 		}
 	}
