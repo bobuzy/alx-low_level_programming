@@ -10,7 +10,7 @@
 char **strtow(char *str)
 {
 	char **ptr, *strr;
-	int i = 0, j, length, index, count = 0;
+	int i = 0, j, index, count = 0;
 
 	if (str == NULL)
 	{
