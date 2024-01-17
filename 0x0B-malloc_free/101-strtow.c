@@ -86,7 +86,7 @@ char *convert_short(char *src)
 			ptr[index] = src[i];
 			index++;
 
-			if (src[i + 1] == ' ' || src [1 + i] == '\0')
+			if (src[i + 1] == ' ' || src[i + 1] == '\0')
 			{
 				ptr[index] = ' ';
 				index++;
