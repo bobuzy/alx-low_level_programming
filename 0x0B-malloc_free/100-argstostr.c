@@ -1,6 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
-#include <stdio.h>
 
 /**
   * argstostr - This function concatenates all the arguments passed into the
@@ -12,44 +10,60 @@
 
 char *argstostr(int ac, char **av)
 {
-	int c = 0, i = 0, j = 0, k = 0;
-	char *l;
+	int i, j;
+	int length = 0, index = 0;
+	char *ptr;
 
 	if (ac == 0 || av == NULL)
+	{
 		return (NULL);
-
-	while (i < ac)
-	{
-		while (av[i][j])
-		{
-			c++;
-			j++;
-		}
-
-		j = 0;
-		i++;
 	}
 
-	l = malloc((sizeof(char) * c) + ac + 1);
-
-	i = 0;
-	while (av[i])
+	for (i = 0; i < ac; i++)
 	{
-		while (av[i][j])
-		{
-			l[k] = av[i][j];
-			k++;
-			j++;
-		}
-
-		l[k] = '\n';
-
-		j = 0;
-		k++;
-		i++;
+		length += _strlen(av[i]);
 	}
 
-	k++;
-	l[k] = '\0';
-	return (l);
+	ptr = malloc((sizeof(char) * length) + (1 * ac));
+
+	if (ptr == NULL)
+	{
+		free(ptr);
+		return (NULL);
+	}
+
+	for (i = 0; i < ac; i++)
+	{
+		j = 0;
+
+		while (j < _strlen(av[i]))
+		{
+			ptr[index] = av[i][j];
+			index++;
+			j++;
+		}
+		ptr[index] = '\n';
+		index++;
+	}
+
+	return (ptr);
+}
+
+/**
+ * _strlen - Counts the lenght of a string
+ * @s: The pointer to the string
+ *
+ * Return: The lenght of the string
+ */
+
+int _strlen(char *s)
+{
+	int n = 0;
+
+	while (*s++)
+	{
+		n++;
+	}
+
+	return (n);
 }
