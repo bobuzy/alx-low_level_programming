@@ -61,7 +61,7 @@ char **strtow(char *str)
 
 char *convert_short(char *src)
 {
-	int i, j, index = 0, length = 0;
+	int i, index = 0, length = 0;
 	char *ptr;
 
 	for (i = 0; src[i] != '\0'; i++)
