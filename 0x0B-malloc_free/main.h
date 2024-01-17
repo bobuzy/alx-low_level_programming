@@ -14,5 +14,6 @@ char **strtow(char *str);
 int _strlen(char *s);
 char **alloc_mem(char *arr);
 char *convert_short(char *src);
+void print_tab(char **tab);
 
 #endif
