@@ -12,5 +12,7 @@ void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 char **strtow(char *str);
 int _strlen(char *s);
+char **alloc_mem(char *arr);
+char *convert_short(char *src);
 
 #endif
