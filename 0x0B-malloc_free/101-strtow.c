@@ -66,10 +66,9 @@ char *convert_short(char *src)
 
 	for (i = 0; src[i] != '\0'; i++)
 	{
-		if (src[i] > 32 || src[i] < 126)
-			flag = 1;
 		if (src[i] != ' ')
 		{
+			flag = 1;
 			length++;
 
 			if (src[i - 1] == ' ' || src[i + 1] == '\0')
@@ -79,7 +78,7 @@ char *convert_short(char *src)
 		}
 	}
 	ptr = malloc((sizeof(char) * length) + 1);
-	if (ptr == NULL || flag != 1 || length == 0)
+	if (ptr == NULL || flag != 1 || length <= 1)
 		return (NULL);
 	for (i = 0; src[i] != '\0'; i++)
 	{
