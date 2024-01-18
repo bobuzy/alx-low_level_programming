@@ -68,6 +68,8 @@ char *convert_short(char *src)
 	{
 		if (src[i] != ' ')
 		{
+			if ((src[i] < 33 || src[i] > 126) && src[i] != '\t')
+				return (NULL);
 			length++;
 
 			if (src[i - 1] == ' ' || src[i + 1] == '\0')
