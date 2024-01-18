@@ -61,15 +61,15 @@ char **strtow(char *str)
 
 char *convert_short(char *src)
 {
-	int i, index = 0, length = 0;
+	int i, flag, index = 0, length = 0;
 	char *ptr;
 
 	for (i = 0; src[i] != '\0'; i++)
 	{
+		if ((src[i] < 33 || src[i] > 126) && src[i] != '\t')
+			flag = 1;
 		if (src[i] != ' ')
 		{
-			if ((src[i] < 33 || src[i] > 126) && src[i] != '\t')
-				return (NULL);
 			length++;
 
 			if (src[i - 1] == ' ' || src[i + 1] == '\0')
@@ -79,7 +79,7 @@ char *convert_short(char *src)
 		}
 	}
 	ptr = malloc((sizeof(char) * length) + 1);
-	if (ptr == NULL)
+	if (ptr == NULL || flag != 1)
 		return (NULL);
 	for (i = 0; src[i] != '\0'; i++)
 	{
