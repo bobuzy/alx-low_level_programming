@@ -37,19 +37,19 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	}
 
-	while (s1[length] != '\0')
+	while (s1[index] != '\0')
 	{
-		ptr[length] = s1[length];
-		length++;
+		ptr[index] = s1[index];
+		index++;
 	}
 
 	for (i = 0; i < n; i++)
 	{
-		ptr[length] = s2[i];
-		length++;
+		ptr[index] = s2[i];
+		index++;
 	}
 
-	ptr[length] = '\0';
+	ptr[index] = '\0';
 	return (ptr);
 }
 
