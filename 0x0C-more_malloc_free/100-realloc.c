@@ -50,7 +50,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
  * addmem - Add more memory to the previously allocated memory
  * @mem: Pointer to the previously allocated memory
  * @prev: The size of the current memory
- * @new: The new size of memory to be allocated
+ * @newm: The new size of memory to be allocated
  *
  * Return: Pointer to the newly allocated memory
  */
@@ -60,12 +60,12 @@ char *addmem(void *mem, unsigned int prev, unsigned int newm)
 	char *ptr;
 	unsigned int i;
 
-        ptr = malloc(newm);
+	ptr = malloc(newm);
 
-        if (ptr == NULL)
-        {
-                return (NULL);
-        }
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < prev; i++)
 	{
@@ -78,27 +78,26 @@ char *addmem(void *mem, unsigned int prev, unsigned int newm)
 /**
  * redmem - Reduce memory of the previously allocated memory
  * @mem: Pointer to the previously allocated memory
- * @prev: The size of the current memory
- * @new: The new size of memory to be allocated
+ * @newm: The new size of memory to be allocated
  *
  * Return: Pointer to the newly allocated memory
  */
 
 char *redmem(void *mem, unsigned int newm)
 {
-        char *ptr;
-        unsigned int i;
+	char *ptr;
+	unsigned int i;
 
-        ptr = malloc(newm);
+	ptr = malloc(newm);
 
-        if (ptr == NULL)
-        {
-                return (NULL);
-        }
+	if (ptr == NULL)
+	{
+		return (NULL);
+	}
 
-        for (i = 0; i < newm; i++)
-        {
-                ((char *)ptr)[i] = ((char *)mem)[i];
-        }
-        return (ptr);
+	for (i = 0; i < newm; i++)
+	{
+		((char *)ptr)[i] = ((char *)mem)[i];
+	}
+	return (ptr);
 }
