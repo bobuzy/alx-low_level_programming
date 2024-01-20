@@ -10,6 +10,8 @@ char *check(char *str);
 void *_calloc(unsigned int nmemb, unsigned int size);
 int *array_range(int min, int max);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+char *addmem(void *mem, unsigned int prev, unsigned int newm);
+char *redmem(void *mem, unsigned int newm);
 int _putchar(char c);
 
 #endif
