@@ -1,6 +1,10 @@
 #ifndef HEADER_FILE
 #define HEADER_FILE
 
+#include <stdlib.h>
+#include <stdio.h>
+#include <stddef.h>
+
 /**
  * struct linked_lists - The singly linked list
  * @str: string - (malloc'ed string)
