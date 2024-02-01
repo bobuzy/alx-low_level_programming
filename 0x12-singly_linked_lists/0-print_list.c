@@ -10,6 +10,7 @@ size_t print_list(const list_t *h)
 {
 	size_t count = 0;
 	const list_t *ptr = NULL;
+
 	ptr = h;
 
 	while (ptr != NULL)
@@ -26,5 +27,5 @@ size_t print_list(const list_t *h)
 		count++;
 	}
 
-	return(count);
+	return (count);
 }
