@@ -2,6 +2,7 @@
 #define HEADER_FILE
 
 #include <stdio.h>
+#include <stddef.h>
 
 /**
  * struct listint_s - singly linked list
