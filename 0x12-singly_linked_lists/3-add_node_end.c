@@ -9,44 +9,44 @@
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-        list_t *new, *ptr;
+	list_t *new, *ptr;
 
-        if (head != NULL && str != NULL)
-        {
-                new = malloc(sizeof(list_t));
+	if (head != NULL && str != NULL)
+	{
+		new = malloc(sizeof(list_t));
 
-                if (new == NULL)
-                {
-                        printf("Error\n");
-                        return (NULL);
-                }
+		if (new == NULL)
+		{
+			printf("Error\n");
+			return (NULL);
+		}
 
-                new->str = strdup(str);
-                new->len = _strlen(str);
-                new->next = NULL;
+		new->str = strdup(str);
+		new->len = _strlen(str);
+		new->next = NULL;
 
-                if (*head == NULL)
-                {
-                        *head = new;
-                        return (*head);
-                }
-                else
-                {
-                        ptr = *head;
+		if (*head == NULL)
+		{
+			*head = new;
+			return (*head);
+		}
+		else
+		{
+			ptr = *head;
 
-                        while (ptr->next != NULL)
-                        {
-                                ptr = ptr->next;
-                        }
+			while (ptr->next != NULL)
+			{
+				ptr = ptr->next;
+			}
 
-                        ptr->next = new;
+			ptr->next = new;
 
-                        return (*head);
-                }
-        }
-
-        return (NULL);
+			return (*head);
+		}
+	}
+	return (NULL);
 }
+
 
 /**
   * _strlen - This function eturns the length of a string
