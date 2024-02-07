@@ -22,9 +22,8 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 			ptr = ptr->next;
 		}
 
-		if (ptr == NULL)
+		if (i != index - 1 || ptr == NULL)
 		{
-			printf("Node does not exist\n");
 			return (NULL);
 		}
 
