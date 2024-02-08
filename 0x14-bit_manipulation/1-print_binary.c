@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * print_binary - Print the binanry representation of a number recursively
+ * @n: The number to be printed
+ *
+ * Return: void
+ */
+
 void print_binary(unsigned long int n)
 {
 	if (n > 1)
