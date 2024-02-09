@@ -10,7 +10,7 @@
 
 int clear_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned int counter = 0, switcher = 1, call;
+	unsigned int counter = 0, switcher = 1;
 
 	if (n == NULL)
 	{
