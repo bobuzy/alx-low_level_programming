@@ -34,7 +34,7 @@ int create_file(const char *filename, char *text_content)
 
 	length = _strlen(text_content);
 
-	byyes = write(fd, text_content, length);
+	bytes = write(fd, text_content, length);
 
 	if (bytes == -1 || bytes != length)
 	{
