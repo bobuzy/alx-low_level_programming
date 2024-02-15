@@ -12,30 +12,38 @@
 
 int create_file(const char *filename, char *text_content)
 {
-	int fd, length, bytes = 0;
+	int fd, length, bytes;
 
 	if (!filename)
 	{
 		return (-1);
 	}
 
-	length = _strlen(text_content);
-
-	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC | O_EXCL, S_IRUSR | S_IWUSR);
+	fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0600);
 
 	if (fd == -1)
 	{
 		return (-1);
 	}
 
-	if (length)
+	if (!text_content)
 	{
-		bytes = write(fd, text_content, length);
+		close(fd);
+		return (1);
+	}
+
+	length = _strlen(text_content);
+
+	byyes = write(fd, text_content, length);
+
+	if (bytes == -1 || bytes != length)
+	{
+		close(fd);
+		return (-1);
 	}
 
 	close(fd);
-
-	return (bytes == length ? 1 : -1);
+	return (1);
 }
 
 
