@@ -1,5 +1,15 @@
 #include "hash_tables.h"
 
+
+/**
+ * hash_table_set - Add an element to the hash table
+ * @ht: The hash table
+ * @key: The key of the new element
+ * @value: The value of the new element
+ *
+ * Return: 1 if succesful, 0 otherwise.
+ */
+
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
@@ -43,6 +53,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 }
+
+
+/**
+ * create_node - Create a new hash node/item
+ * @key: The key to be assigned to the node
+ * @value: The value to be assigned to the node
+ *
+ * Return: The new created node
+ */
 
 hash_node_t *create_node(const char *key, const char *value)
 {
